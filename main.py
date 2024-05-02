@@ -2,6 +2,11 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+@app.get("/conta/{valor}")
+async def contagem(valor:int):
+    num = valor * 10
+    return num
+
 @app.get("/")
 async def index():
     return 'Funcionou'
